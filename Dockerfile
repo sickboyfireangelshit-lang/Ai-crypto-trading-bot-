@@ -11,4 +11,5 @@ RUN pip install --no-cache-dir \
     gunicorn==22.0.0
 
 EXPOSE $PORT
-CMD ["gunicorn", "--bind", "0.0.0.0:$PORT", "main:app"]
+CMD gunicorn --bind 0.0.0.0:$PORT main:app
+
