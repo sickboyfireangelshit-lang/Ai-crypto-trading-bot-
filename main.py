@@ -82,3 +82,16 @@ def trades():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 8080))
     app.run(host='0.0.0.0', port=port, debug=False)
+from flask import Flask, jsonify
+... [your existing imports and AITradingBot class] ...
+
+# ADD THESE LINES HERE (bottom of file):
+@app.route('/')
+def status():
+    bot = AITradingBot()
+    return jsonify(bot.get_signal())
+
+if __name__ == '__main__':
+    app.run()
+
+# END OF FILE
