@@ -84,8 +84,6 @@ if __name__ == '__main__':
     app.run(host='0.0.0.0', port=port, debug=False)
 from flask import Flask, jsonify
 ... [your existing imports and AITradingBot class] ...
-
-# ADD THESE LINES HERE (bottom of file):
 @app.route('/')
 def status():
     bot = AITradingBot()
